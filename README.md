@@ -23,6 +23,11 @@ This repository implements the full assignment flow:
 - Node 18+
 - Docker (recommended) or local MySQL 8 and MongoDB 6 instances
 
+ ## Clone the repository
+
+ git clone (https://github.com/Anurag1111111/backend_assignment.git)
+ cd brightbeans-backend-assignment
+
 ### 1) Start databases (Docker)
 
 ```bash
