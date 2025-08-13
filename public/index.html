@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>BrightBeans Products</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <header>
+    <h1>BrightBeans Products</h1>
+    <p>Data is fetched from the backend <strong>encrypted</strong> and decrypted in-browser.</p>
+  </header>
+  <main>
+    <section class="controls">
+      <button id="handshakeBtn">1) Start Secure Session</button>
+      <select id="source">
+        <option value="mysql" selected>MySQL via Prisma</option>
+        <option value="mongo">MongoDB via Prisma</option>
+      </select>
+      <button id="loadBtn" disabled>2) Load Products</button>
+    </section>
+    <section>
+      <div id="status"></div>
+      <table id="productsTable">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Category</th>
+            <th>Price</th>
+            <th>Rating</th>
+            <th>Stock</th>
+            <th>Discount Percentage</th>
+            <th>Brand</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </section>
+  </main>
+  <script src="/app.js"></script>
+</body>
+</html>

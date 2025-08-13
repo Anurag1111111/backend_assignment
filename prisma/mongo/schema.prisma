@@ -1,0 +1,37 @@
+// prisma/mongo/schema.prisma
+generator client {
+  provider = "prisma-client-js"
+  output   = "../../src/generated/mongo"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("MONGO_URL")
+}
+
+model Product {
+  id        String  @id @default(auto()) @map("_id") @db.ObjectId
+  productId Int     @unique
+
+  title                  String
+  description            String
+  category               String
+  price                  Float
+  discountPercentage     Float
+  rating                 Float
+  stock                  Int
+  tags                   Json
+  brand                  String
+  sku                    String
+  weight                 Int
+  dimensions             Json
+  warrantyInformation    String
+  shippingInformation    String
+  availabilityStatus     String
+  reviews                Json
+  returnPolicy           String
+  minimumOrderQuantity   Int
+  meta                   Json
+  images                 Json
+  thumbnail              String
+}

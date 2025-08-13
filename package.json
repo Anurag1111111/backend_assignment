@@ -1,0 +1,29 @@
+{
+  "name": "brightbeans-backend-assignment",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Backend Developer assignment: Prisma (MySQL + MongoDB), encrypted API, simple frontend",
+  "main": "src/server.js",
+  "type": "commonjs",
+  "scripts": {
+    "dev": "node src/server.js",
+    "start": "node src/server.js",
+    "prisma:generate:mysql": "prisma generate --schema=prisma/mysql/schema.prisma",
+    "prisma:generate:mongo": "prisma generate --schema=prisma/mongo/schema.prisma",
+    "prisma:generate": "npm run prisma:generate:mysql && npm run prisma:generate:mongo",
+    "prisma:migrate": "prisma migrate dev --name init --schema=prisma/mysql/schema.prisma",
+    "seed": "node src/seed.js",
+    "postinstall": "npm run prisma:generate"
+  },
+  "dependencies": {
+    "@prisma/client": "^5.15.0",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.19.2",
+    "mysql2": "^3.9.7"
+  },
+  "devDependencies": {
+    "prisma": "^5.15.0"
+  }
+}
